@@ -1,0 +1,22 @@
+<meta name="viewport" content="width=device-width">
+
+<script src="backbutton.js"></script>
+
+<p>
+	Please press the back button.
+	<label>
+		<input type="checkbox" id="exit">
+		Exit
+	</label>
+</p>
+
+<pre id="log"></pre>
+
+<script>
+	addEventListener('backbutton', function (e) {
+		log.append('backbutton dispatched\n')
+		if (exit.checked) {
+			e.preventDefault()
+		}
+	})
+</script>
