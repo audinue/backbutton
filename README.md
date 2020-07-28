@@ -1,5 +1,7 @@
 # backbutton
 
+Simple backbutton event provider for JavaScript web apps which maintain their own history stack.
+
 Usage:
 
 ```js
