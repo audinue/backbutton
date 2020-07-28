@@ -1,7 +1,12 @@
 addEventListener('popstate', function (e) {
 	if (e.state === null) {
-		history.pushState('', '')
-		dispatchEvent(new CustomEvent('backbutton'))
+		var event = new CustomEvent('backbutton', { cancelable: true })
+		dispatchEvent(event)
+		if (event.defaultPrevented) {
+			history.back()
+		} else {
+			history.pushState('', '')
+		}
 	}
 })
 if (history.state === null) {
